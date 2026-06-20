@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dy2o6ddsm7rd7"]
+
+[ext_resource type="TileSet" uid="uid://byfbxgchx72qe" path="res://scenes/office.tres" id="1_qj4mq"]
+
+[node name="Boss Office" type="Node2D" unique_id=413749035]
+
+[node name="Background" type="TileMapLayer" parent="." unique_id=1132890953]
+tile_set = ExtResource("1_qj4mq")

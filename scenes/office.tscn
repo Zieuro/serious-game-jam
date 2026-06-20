@@ -1,0 +1,9 @@
+[gd_scene format=4 uid="uid://bk7c8uelk1x4a"]
+
+[ext_resource type="TileSet" uid="uid://byfbxgchx72qe" path="res://scenes/office.tres" id="1_3e7dm"]
+
+[node name="Office" type="Node2D" unique_id=1896385944]
+
+[node name="Background" type="TileMapLayer" parent="." unique_id=1389710863]
+tile_map_data = PackedByteArray("AAANAA4AAAAMAAQAAAANAAwAAAAMAAIAAAANAAoAAAANABgAAAANAAgAAAANABUAAAANAAUAAAANABUAAAANAAIAAAANABUAAAANAAAAAAANABQAAAA=")
+tile_set = ExtResource("1_3e7dm")

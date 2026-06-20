@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b6ybcsjj78p4p"]
+
+[ext_resource type="TileSet" uid="uid://byfbxgchx72qe" path="res://scenes/office.tres" id="1_io6wu"]
+
+[node name="Breakroom" type="Node2D" unique_id=1144584370]
+
+[node name="Background" type="TileMapLayer" parent="." unique_id=1247785151]
+tile_set = ExtResource("1_io6wu")
