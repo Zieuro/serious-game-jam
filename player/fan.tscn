@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dy0ntnuv72jyl"]
+
+[ext_resource type="Texture2D" uid="uid://v17jn88f01nx" path="res://icon.svg" id="1_mqjdn"]
+[ext_resource type="Script" uid="uid://cxyi6v7vahu4a" path="res://player/fan.gd" id="1_xt42y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bnews"]
+
+[node name="FAN" type="CharacterBody2D" unique_id=835704599]
+motion_mode = 1
+slide_on_ceiling = false
+script = ExtResource("1_xt42y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1028142203]
+shape = SubResource("CircleShape2D_bnews")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1585935127]
+texture = ExtResource("1_mqjdn")
