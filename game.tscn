@@ -1,13 +1,3 @@
-[gd_scene format=4 uid="uid://chkaj6tfucgtl"]
-
-[ext_resource type="PackedScene" uid="uid://dy0ntnuv72jyl" path="res://player/fan.tscn" id="1_80nbo"]
-[ext_resource type="TileSet" uid="uid://byfbxgchx72qe" path="res://scenes/office.tres" id="2_e2o6t"]
+[gd_scene format=3 uid="uid://chkaj6tfucgtl"]
 
 [node name="Game" type="Node" unique_id=1309088053]
-
-[node name="FAN" parent="." unique_id=835704599 instance=ExtResource("1_80nbo")]
-position = Vector2(228, 190)
-
-[node name="Background" type="TileMapLayer" parent="." unique_id=768114359]
-tile_map_data = PackedByteArray("AAAVAAkAAAAMABQAAAAbAAkAAAAMABQAAAAhAAkAAAAMABQAAAAPAAkAAAAMABQAAAAJAAkAAAAMABQAAAAEAAkAAAAEAAYAAAA=")
-tile_set = ExtResource("2_e2o6t")

@@ -1,9 +1,51 @@
 [gd_scene format=3 uid="uid://dy0ntnuv72jyl"]
 
-[ext_resource type="Texture2D" uid="uid://v17jn88f01nx" path="res://icon.svg" id="1_mqjdn"]
 [ext_resource type="Script" uid="uid://cxyi6v7vahu4a" path="res://player/fan.gd" id="1_xt42y"]
+[ext_resource type="Texture2D" uid="uid://cyyurvf4gu5n0" path="res://assets/desk_fan/animations/floor_fan/floor_back_front_connector.png" id="2_lu3m6"]
+[ext_resource type="Texture2D" uid="uid://b0ig3vi1nbld" path="res://assets/desk_fan/animations/fan_heads/fan_head_with_cover_off.png" id="3_fr4ro"]
+[ext_resource type="Texture2D" uid="uid://bcun7m5n47wm" path="res://assets/desk_fan/animations/fan_heads/fan_head_with_cover_01.png" id="4_toljl"]
+[ext_resource type="Texture2D" uid="uid://b8ahaddp5bcuq" path="res://assets/desk_fan/animations/fan_heads/fan_head_with_cover_02.png" id="5_vawwj"]
+[ext_resource type="Texture2D" uid="uid://xpyl7ip0jpqw" path="res://assets/desk_fan/animations/fan_heads/fan_head_with_cover_03.png" id="6_meprr"]
+[ext_resource type="Texture2D" uid="uid://bquutxa86ruws" path="res://assets/desk_fan/animations/fan_heads/fan_head_with_cover_04.png" id="7_tv7xc"]
+[ext_resource type="Texture2D" uid="uid://dnt4e37xh6ket" path="res://assets/desk_fan/animations/fan_heads/fan_head_with_cover_05.png" id="8_w6bqs"]
+[ext_resource type="Texture2D" uid="uid://y08an78kwxoo" path="res://assets/desk_fan/animations/fan_heads/fan_head_with_cover_06.png" id="9_82h32"]
+[ext_resource type="Texture2D" uid="uid://bkte7uq1jo8w3" path="res://assets/desk_fan/animations/floor_fan/floor_fan_front_connector.png" id="10_mx1b3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bnews"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bnews"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fr4ro")
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_toljl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vawwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_meprr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tv7xc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w6bqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_82h32")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 20.0
+}]
 
 [node name="FAN" type="CharacterBody2D" unique_id=835704599]
 motion_mode = 1
@@ -13,5 +55,17 @@ script = ExtResource("1_xt42y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1028142203]
 shape = SubResource("CircleShape2D_bnews")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1585935127]
-texture = ExtResource("1_mqjdn")
+[node name="back" type="Sprite2D" parent="." unique_id=257738492]
+position = Vector2(-67, 76)
+texture = ExtResource("2_lu3m6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=329903397]
+rotation = -2.4574
+sprite_frames = SubResource("SpriteFrames_bnews")
+animation = &"on"
+frame = 3
+frame_progress = 0.07339896
+
+[node name="front" type="Sprite2D" parent="." unique_id=1090109260]
+position = Vector2(-426, 58)
+texture = ExtResource("10_mx1b3")
