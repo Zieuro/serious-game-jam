@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cu5mwm0e8af5a"]
+
+[ext_resource type="Texture2D" uid="uid://ba06t2p1ix7ij" path="res://assets/office_assets/separately_assets/Sprite-0015.png" id="1_c5euc"]
+[ext_resource type="Script" uid="uid://buvg85k8tdctv" path="res://obstacles/obstacle.gd" id="1_efd5o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnews"]
+
+[node name="Water Jug" type="CharacterBody2D" unique_id=747903791]
+script = ExtResource("1_efd5o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=589345140]
+texture = ExtResource("1_c5euc")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=481144767]
+position = Vector2(15, 17)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_bnews")
