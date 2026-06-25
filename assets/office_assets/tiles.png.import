@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8ahaddp5bcuq"
-path="res://.godot/imported/fan_head_with_cover_02.png-28aee8276424ffa0d01d8714fcbff5c4.ctex"
+uid="uid://dmcv6m8ol64t6"
+path="res://.godot/imported/tiles.png-88c705192dcdcdedada799382ca7670d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/desk_fan/animations/fan_heads/fan_head_with_cover_02.png"
-dest_files=["res://.godot/imported/fan_head_with_cover_02.png-28aee8276424ffa0d01d8714fcbff5c4.ctex"]
+source_file="res://assets/office_assets/tiles.png"
+dest_files=["res://.godot/imported/tiles.png-88c705192dcdcdedada799382ca7670d.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

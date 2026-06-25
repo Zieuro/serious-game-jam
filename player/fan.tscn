@@ -56,16 +56,17 @@ script = ExtResource("1_xt42y")
 shape = SubResource("CircleShape2D_bnews")
 
 [node name="back" type="Sprite2D" parent="." unique_id=257738492]
-position = Vector2(-67, 76)
+position = Vector2(0, -81)
 texture = ExtResource("2_lu3m6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=329903397]
-rotation = -2.4574
+rotation = -1.3509382
 sprite_frames = SubResource("SpriteFrames_bnews")
 animation = &"on"
-frame = 3
-frame_progress = 0.07339896
+frame = 1
+frame_progress = 0.7772203
 
 [node name="front" type="Sprite2D" parent="." unique_id=1090109260]
-position = Vector2(-426, 58)
+position = Vector2(274.99994, -115.00002)
+rotation = -0.03292828
 texture = ExtResource("10_mx1b3")

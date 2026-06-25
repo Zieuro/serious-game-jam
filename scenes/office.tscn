@@ -8,7 +8,7 @@ script = ExtResource("1_n0wcf")
 
 [node name="Scene" type="Parallax2D" parent="." unique_id=1284318826]
 repeat_size = Vector2(852, 0)
-autoscroll = Vector2(60, 0)
+autoscroll = Vector2(-90, 0)
 repeat_times = 2
 ignore_camera_scroll = true
 

@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://chkaj6tfucgtl"]
 
+[ext_resource type="PackedScene" uid="uid://dy0ntnuv72jyl" path="res://player/fan.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://bk7c8uelk1x4a" path="res://scenes/office.tscn" id="2_e2o6t"]
+
 [node name="Game" type="Node" unique_id=1309088053]
+
+[node name="Office" parent="." unique_id=1896385944 instance=ExtResource("2_e2o6t")]
+
+[node name="FAN" parent="." unique_id=835704599 instance=ExtResource("1_80nbo")]
+z_index = 20
+position = Vector2(96, 140)
+scale = Vector2(0.025, 0.025)
+SPEED = 150.0
+JUMP_VELOCITY = -150.0
