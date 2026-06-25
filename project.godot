@@ -15,6 +15,10 @@ run/main_scene="uid://chkaj6tfucgtl"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ChangeScene="*uid://71mgofvpjto8"
+
 [display]
 
 window/size/viewport_width=426
@@ -28,6 +32,10 @@ window/stretch/scale_mode="integer"
 
 project/assembly_name="Deadline Drift"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/EZ-Theme/plugin.cfg", "res://addons/scene_changer/plugin.cfg")
+
 [input]
 
 spin={
@@ -39,6 +47,7 @@ spin={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
 
 [rendering]
 

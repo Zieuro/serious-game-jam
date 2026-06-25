@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://chkaj6tfucgtl"]
 
 [ext_resource type="PackedScene" uid="uid://dy0ntnuv72jyl" path="res://player/fan.tscn" id="1_80nbo"]
-[ext_resource type="PackedScene" uid="uid://bk7c8uelk1x4a" path="res://scenes/office.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bjykjyj68po0b" path="res://scenes/office.tscn" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://e3dy0ycojhk0" path="res://obstacles/obstacle_spawner.tscn" id="3_fc0e3"]
 
 [node name="Game" type="Node" unique_id=1309088053]
 
-[node name="Office" parent="." unique_id=1896385944 instance=ExtResource("2_e2o6t")]
+[node name="Office" parent="." unique_id=985777886 instance=ExtResource("1_feb5d")]
 
 [node name="FAN" parent="." unique_id=835704599 instance=ExtResource("1_80nbo")]
 z_index = 20
@@ -13,3 +14,12 @@ position = Vector2(96, 140)
 scale = Vector2(0.025, 0.025)
 SPEED = 150.0
 JUMP_VELOCITY = -150.0
+
+[node name="Obstacle Spawner" parent="." unique_id=2133509839 instance=ExtResource("3_fc0e3")]
+
+[node name="Timer" type="Timer" parent="." unique_id=1939471448]
+wait_time = 0.5
+autostart = true
+ignore_time_scale = true
+
+[connection signal="timeout" from="Timer" to="Obstacle Spawner" method="_on_timer_timeout"]

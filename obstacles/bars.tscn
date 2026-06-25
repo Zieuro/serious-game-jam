@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://eco1eegxluvq"]
+
+[ext_resource type="Script" uid="uid://buvg85k8tdctv" path="res://obstacles/obstacle.gd" id="1_glbs4"]
+[ext_resource type="Texture2D" uid="uid://b4s0twj7bgogb" path="res://assets/office_assets/separately_assets/Sprite-0027.png" id="2_glbs4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnews"]
+size = Vector2(30, 16)
+
+[node name="Bars" type="CharacterBody2D" unique_id=113895897]
+z_index = 5
+script = ExtResource("1_glbs4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=96876253]
+texture = ExtResource("2_glbs4")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715187182]
+position = Vector2(16, 8)
+shape = SubResource("RectangleShape2D_bnews")

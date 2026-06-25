@@ -6,6 +6,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bnews"]
 
 [node name="Water Jug" type="CharacterBody2D" unique_id=747903791]
+z_index = 5
 script = ExtResource("1_efd5o")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=589345140]

@@ -1,21 +1,17 @@
-[gd_scene format=4 uid="uid://bk7c8uelk1x4a"]
+[gd_scene format=3 uid="uid://bjykjyj68po0b"]
 
-[ext_resource type="TileSet" uid="uid://byfbxgchx72qe" path="res://scenes/office.tres" id="1_3e7dm"]
-[ext_resource type="Script" uid="uid://c0b1bv7mcgepx" path="res://scenes/game.gd" id="1_n0wcf"]
+[ext_resource type="PackedScene" uid="uid://b6ybcsjj78p4p" path="res://scenes/desk.tscn" id="1_jwaux"]
+[ext_resource type="PackedScene" uid="uid://bk7c8uelk1x4a" path="res://scenes/breakroom.tscn" id="2_7jj4f"]
+[ext_resource type="PackedScene" uid="uid://c41ymbagtkdjr" path="res://scenes/backroom.tscn" id="3_qphb6"]
 
-[node name="Office" type="Node2D" unique_id=1896385944]
-script = ExtResource("1_n0wcf")
+[node name="Office" type="Parallax2D" unique_id=985777886]
+repeat_size = Vector2(1343, 0)
+autoscroll = Vector2(-90, 0)
 
-[node name="Scene" type="Parallax2D" parent="." unique_id=1284318826]
-repeat_size = Vector2(426, 0)
-autoscroll = Vector2(60, 0)
-repeat_times = 3
-ignore_camera_scroll = true
+[node name="Desk" parent="." unique_id=1144584370 instance=ExtResource("1_jwaux")]
 
-[node name="Background" type="TileMapLayer" parent="Scene" unique_id=1389710863]
-tile_map_data = PackedByteArray("AAANAA4AAAAMAAQAAAANAAwAAAAMAAIAAAANAAoAAAANABgAAAANAAgAAAANABUAAAANAAUAAAANABUAAAANAAIAAAANABUAAAANAAAAAAANABQAAAARAAoAAAANABgAAAAVAAoAAAANABgAAAAZAAoAAAANABgAAAAJAAoAAAANABgAAAAFAAoAAAANABgAAAABAAoAAAANABgAAAAJAAgAAAANABUAAAAFAAgAAAANABUAAAABAAgAAAANABUAAAARAAgAAAANABUAAAAVAAgAAAANABUAAAAZAAgAAAANABUAAAARAAUAAAANABUAAAAVAAUAAAANABUAAAAZAAUAAAANABUAAAARAAIAAAANABUAAAAVAAIAAAANABUAAAAZAAIAAAANABUAAAAJAAUAAAANABUAAAAFAAUAAAANABUAAAABAAUAAAANABUAAAABAAIAAAANABUAAAAFAAIAAAANABUAAAAJAAIAAAANABUAAAAJAAAAAAANABQAAAAFAAAAAAANABQAAAABAAAAAAANABQAAAARAAAAAAANABQAAAAVAAAAAAANABQAAAAZAAAAAAANABQAAAALAAwAAAAMAAIAAAAJAAwAAAAMAAIAAAAHAAwAAAAMAAIAAAAFAAwAAAAMAAIAAAADAAwAAAAMAAIAAAABAAwAAAAMAAIAAAD//wwAAAAMAAIAAAAPAAwAAAAMAAIAAAARAAwAAAAMAAIAAAATAAwAAAAMAAIAAAAVAAwAAAAMAAIAAAAXAAwAAAAMAAIAAAAZAAwAAAAMAAIAAAAbAAwAAAAMAAIAAAAPAA4AAAAMAAQAAAARAA4AAAAMAAQAAAATAA4AAAAMAAQAAAAVAA4AAAAMAAQAAAAXAA4AAAAMAAQAAAAZAA4AAAAMAAQAAAAbAA4AAAAMAAQAAAALAA4AAAAMAAQAAAAJAA4AAAAMAAQAAAAHAA4AAAAMAAQAAAAFAA4AAAAMAAQAAAADAA4AAAAMAAQAAAABAA4AAAAMAAQAAAD//w4AAAAMAAQAAAA=")
-tile_set = ExtResource("1_3e7dm")
+[node name="Breakroom" parent="." unique_id=1896385944 instance=ExtResource("2_7jj4f")]
+position = Vector2(448, 0)
 
-[node name="Midground" type="TileMapLayer" parent="Scene" unique_id=444407218]
-tile_map_data = PackedByteArray("AAACAAkAAAAEAAYAAAAFAAMAAAAGAA4AAAATAAoAAAAcABwAAAAGAAkAAAASABwAAAAQAAQAAAAGABAAAAALAAMAAAAOAAwAAAACAAUAAAAGAAwAAAAKAAkAAAATABYAAAAYAAMAAAAKAAwAAAARAAoAAAAaABwAAAAVAAoAAAAeABwAAAAYAAoAAAAUABQAAAAYAAkAAAAgAB8AAAA=")
-tile_set = ExtResource("1_3e7dm")
+[node name="Backroom" parent="." unique_id=1907480973 instance=ExtResource("3_qphb6")]
+position = Vector2(-447, 0)
