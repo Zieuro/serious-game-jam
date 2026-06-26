@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cb6vhw65v5lnb"]
+
+[ext_resource type="FontFile" uid="uid://bp5r06u1p6n41" path="res://assets/quip_large.ttf" id="2_lt2ag"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bnews"]
+font = ExtResource("2_lt2ag")
+font_size = 42
+outline_color = Color(0.26779008, 0.26779044, 0.2677901, 1)
+
+[node name="Control" type="Control" unique_id=484242389]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=374288591]
+layout_mode = 0
+offset_right = 426.0
+offset_bottom = 240.0
+color = Color(0.096204735, 0.09620475, 0.096204735, 1)
+
+[node name="Title" type="Label" parent="." unique_id=1016490960]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.0
+offset_top = 41.0
+offset_right = 95.0
+offset_bottom = 80.0
+grow_horizontal = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_bnews")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=61036249]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 84.0
+offset_right = 225.0
+offset_bottom = 107.0

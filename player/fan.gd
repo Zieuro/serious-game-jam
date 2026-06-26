@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var death: Timer = $"../Death"
 
 var can_move: bool = false
+var won: bool = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -20,9 +21,13 @@ func _physics_process(delta: float) -> void:
 		sprite.play("on")
 
 	move_and_slide()
+	
+	if won:
+		velocity.x = 90.0
 
 func die() -> void:
 	can_move = false
+	won = false
 	sprite.play("off")
 	collision_layer = 0
 	collision_mask = 0
