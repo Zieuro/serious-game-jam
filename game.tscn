@@ -7,8 +7,10 @@
 [node name="Game" type="Node" unique_id=1309088053]
 
 [node name="Office" parent="." unique_id=985777886 instance=ExtResource("1_feb5d")]
+unique_name_in_owner = true
 
 [node name="FAN" parent="." unique_id=835704599 instance=ExtResource("1_80nbo")]
+unique_name_in_owner = true
 z_index = 20
 position = Vector2(96, 140)
 scale = Vector2(0.025, 0.025)

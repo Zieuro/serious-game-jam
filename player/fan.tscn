@@ -11,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://y08an78kwxoo" path="res://assets/desk_fan/animations/fan_heads/fan_head_with_cover_06.png" id="9_82h32"]
 [ext_resource type="Texture2D" uid="uid://bkte7uq1jo8w3" path="res://assets/desk_fan/animations/floor_fan/floor_fan_front_connector.png" id="10_mx1b3"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bnews"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_glbs4"]
+radius = 233.8482
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bnews"]
 animations = [{
@@ -53,7 +54,9 @@ slide_on_ceiling = false
 script = ExtResource("1_xt42y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1028142203]
-shape = SubResource("CircleShape2D_bnews")
+position = Vector2(36, -148)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_glbs4")
 
 [node name="back" type="Sprite2D" parent="." unique_id=257738492]
 position = Vector2(0, -81)

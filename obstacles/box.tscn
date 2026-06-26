@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://scn6vh65crig"]
 
+[ext_resource type="Script" uid="uid://buvg85k8tdctv" path="res://obstacles/obstacle.gd" id="1_0j836"]
 [ext_resource type="Texture2D" uid="uid://cumcv0bal87yg" path="res://assets/office_assets/separately_assets/Sprite-0020.png" id="1_7r7oj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnews"]
-size = Vector2(20, 17)
+size = Vector2(22, 22.5)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=905989124]
+[node name="Box" type="CharacterBody2D" unique_id=905989124]
+z_index = 5
+script = ExtResource("1_0j836")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1454231832]
 texture = ExtResource("1_7r7oj")
@@ -13,5 +16,5 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=732549710]
 z_index = 5
-position = Vector2(16, 16.5)
+position = Vector2(16, 15.75)
 shape = SubResource("RectangleShape2D_bnews")

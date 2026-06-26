@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b4s0twj7bgogb" path="res://assets/office_assets/separately_assets/Sprite-0027.png" id="2_glbs4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnews"]
-size = Vector2(30, 16)
+size = Vector2(34, 18)
 
 [node name="Bars" type="CharacterBody2D" unique_id=113895897]
 z_index = 5

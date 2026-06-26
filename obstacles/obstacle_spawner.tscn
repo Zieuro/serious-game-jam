@@ -8,4 +8,4 @@
 
 [node name="Obstacle Spawner" type="Node2D" unique_id=2133509839]
 script = ExtResource("1_yen1t")
-obstacle_list = Array[PackedScene]([ExtResource("2_smthq"), ExtResource("3_ujmej"), ExtResource("4_4siyl"), ExtResource("5_mx7r7")])
+obstacle_list = Array[PackedScene]([ExtResource("4_4siyl"), ExtResource("5_mx7r7"), ExtResource("3_ujmej"), ExtResource("2_smthq")])

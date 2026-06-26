@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://buvg85k8tdctv" path="res://obstacles/obstacle.gd" id="1_5f8pu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnews"]
-size = Vector2(30, 20)
+size = Vector2(34, 22)
 
 [node name="Stocks" type="CharacterBody2D" unique_id=113895897]
 z_index = 5
