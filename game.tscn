@@ -1,10 +1,32 @@
 [gd_scene format=3 uid="uid://chkaj6tfucgtl"]
 
 [ext_resource type="PackedScene" uid="uid://dy0ntnuv72jyl" path="res://player/fan.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://bx6cdb6ysuffh" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bjykjyj68po0b" path="res://scenes/office.tscn" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://e3dy0ycojhk0" path="res://obstacles/obstacle_spawner.tscn" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://cef1cygxpbwtu" path="res://dialogue/balloon.tscn" id="5_ryrav"]
+[ext_resource type="Resource" uid="uid://d873uysjo0br" path="res://dialogue/start.dialogue" id="6_eow3j"]
+[ext_resource type="FontFile" uid="uid://bp5r06u1p6n41" path="res://assets/quip_large.ttf" id="6_ryrav"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnews"]
+size = Vector2(451, 42)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnews"]
+bg_color = Color(0.16924527, 0.16924533, 0.16924518, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_bnews"]
+font = ExtResource("6_ryrav")
+font_size = 15
+font_color = Color(0, 0, 0, 1)
+outline_size = 3
+outline_color = Color(0.883378, 0.88337797, 0.88337797, 1)
 
 [node name="Game" type="Node" unique_id=1309088053]
+script = ExtResource("1_fc0e3")
 
 [node name="Office" parent="." unique_id=985777886 instance=ExtResource("1_feb5d")]
 unique_name_in_owner = true
@@ -12,7 +34,7 @@ unique_name_in_owner = true
 [node name="FAN" parent="." unique_id=835704599 instance=ExtResource("1_80nbo")]
 unique_name_in_owner = true
 z_index = 20
-position = Vector2(96, 140)
+position = Vector2(92, 102.99999)
 scale = Vector2(0.025, 0.025)
 SPEED = 150.0
 JUMP_VELOCITY = -150.0
@@ -21,7 +43,55 @@ JUMP_VELOCITY = -150.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1939471448]
 wait_time = 0.5
-autostart = true
 ignore_time_scale = true
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1255839797]
+position = Vector2(0, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1366074164]
+position = Vector2(215.5, 206)
+shape = SubResource("RectangleShape2D_bnews")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=321368762]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=556292452]
+position = Vector2(216, -21)
+shape = SubResource("RectangleShape2D_bnews")
+
+[node name="MyBalloon" parent="." unique_id=1434168376 instance=ExtResource("5_ryrav")]
+visible = false
+dialogue_resource = ExtResource("6_eow3j")
+start_from_title = "start"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=834674814]
+z_index = 15
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -20.0
+offset_right = 85.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnews")
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=1821149265]
+propagate_maximum_size = true
+layout_mode = 2
+text = "Scroll mouse wheel to move"
+label_settings = SubResource("LabelSettings_bnews")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Death" type="Timer" parent="." unique_id=1477513317]
+wait_time = 1.5
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="Obstacle Spawner" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Death" to="." method="_on_death_timeout"]

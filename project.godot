@@ -10,14 +10,19 @@ config_version=5
 
 [application]
 
-config/name="Deadline Drift"
-run/main_scene="uid://chkaj6tfucgtl"
+config/name="Windfall"
+run/main_scene="uid://c1espkpfbw2u2"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-ChangeScene="*uid://71mgofvpjto8"
+DialogueManager="*uid://c3rodes2l3gxb"
+Master="*uid://c8nwh0xuxp2yn"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://dialogue/balloon.tscn"
 
 [display]
 
@@ -25,7 +30,6 @@ window/size/viewport_width=426
 window/size/viewport_height=240
 window/size/mode=2
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
 
 [dotnet]
@@ -34,7 +38,7 @@ project/assembly_name="Deadline Drift"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/EZ-Theme/plugin.cfg", "res://addons/scene_changer/plugin.cfg")
+enabled=PackedStringArray("res://addons/EZ-Theme/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 
@@ -43,6 +47,10 @@ spin={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":5,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogue/start.dialogue")
 
 [physics]
 

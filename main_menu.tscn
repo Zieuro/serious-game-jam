@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://c1espkpfbw2u2"]
+
+[ext_resource type="Script" uid="uid://curyp7add2lad" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="PackedScene" uid="uid://dy2o6ddsm7rd7" path="res://scenes/boss_office.tscn" id="2_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://deg83we3kwbdh" path="res://assets/Windfall Title.png" id="3_jix8l"]
+[ext_resource type="FontFile" uid="uid://bp5r06u1p6n41" path="res://assets/quip_large.ttf" id="4_jix8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnews"]
+bg_color = Color(0.9647059, 0.93333334, 0.8901961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
+bg_color = Color(0.9647059, 0.93333334, 0.8901961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
+bg_color = Color(0.5439139, 0.5377692, 0.51204526, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 2
+
+[node name="Main Menu" type="Control" unique_id=867207814]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="Boss Office" parent="." unique_id=413749035 instance=ExtResource("2_fu7sn")]
+modulate = Color(0.38675654, 0.38675663, 0.3867566, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1289684215]
+position = Vector2(218.99998, 119.99999)
+scale = Vector2(0.2505208, 0.25052083)
+texture = ExtResource("3_jix8l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=256051792]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -39.0
+offset_right = 44.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="start" type="Button" parent="VBoxContainer" unique_id=1424083090]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_colors/font_hover_color = Color(0.15487581, 0.15487596, 0.15487641, 1)
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_bnews")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nlkkf")
+text = " Start"
+
+[node name="quit" type="Button" parent="VBoxContainer" unique_id=364163837]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18039216, 0.13333334, 0.18431373, 1)
+theme_override_colors/font_hover_color = Color(0.15487581, 0.15487596, 0.15487641, 1)
+theme_override_fonts/font = ExtResource("4_jix8l")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_bnews")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nlkkf")
+text = "Quit
+"
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
