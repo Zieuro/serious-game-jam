@@ -5,8 +5,9 @@ extends Node
 
 
 func _ready() -> void:
-	DialogueManager.show_dialogue_balloon_scene(my_balloon, load("res://dialogue/win.dialogue"), "start")
-
+	var balloon: Node = DialogueManager.show_dialogue_balloon_scene(my_balloon, load("res://dialogue/win.dialogue"), "start")
+	await balloon.tree_exited
+	credits.start()
 
 func _on_credits_timeout() -> void:
-	print("roll credits")
+	get_tree().change_scene_to_file("res://end.tscn")

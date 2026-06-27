@@ -8,27 +8,33 @@ extends Node
 @onready var death: Timer = $Death
 @onready var start_message: PanelContainer = $PanelContainer
 @onready var my_balloon = load("res://dialogue/balloon.tscn")
+@onready var fan_sfx: AudioStreamPlayer = $Fan
 
 var bg_stop: Vector2 = Vector2(0,0)
 var bg_start: Vector2 = Vector2(-90,0)
 
 var paused: bool = true
+var can_unpause: bool = false
 
 func _ready() -> void:
+	fan_sfx.stream_paused = true
 	bg.autoscroll = bg_stop
 	start_message.visible = true
 	
 	if Master.fresh_start:
-		DialogueManager.show_dialogue_balloon_scene(my_balloon, load("res://dialogue/start.dialogue"), "start")
+		var start_dialogue: Node = DialogueManager.show_dialogue_balloon_scene(my_balloon, load("res://dialogue/start.dialogue"), "start")
+		await start_dialogue.tree_exited
 		Master.fresh_start = false
+	can_unpause = true
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("spin") and paused:
+	if Input.is_action_just_pressed("spin") and paused and can_unpause:
 		paused = false
 		timer.start()
 		game.start()
 		bg.autoscroll = bg_start
 		player.can_move = true
+		fan_sfx.stream_paused = false
 		start_message.visible = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

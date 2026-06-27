@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var game: Node = $".."
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var death: Timer = $"../Death"
+@onready var die_sfx: AudioStreamPlayer = $"../Die"
+@onready var fan_sfx: AudioStreamPlayer = $"../Fan"
 
 var can_move: bool = false
 var won: bool = false
@@ -33,4 +35,5 @@ func die() -> void:
 	collision_mask = 0
 	velocity.y = -400
 	death.start()
-	
+	die_sfx.play()
+	fan_sfx.stream_paused = true
