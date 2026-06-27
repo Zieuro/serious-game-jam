@@ -26,6 +26,7 @@ func _ready() -> void:
 		await start_dialogue.tree_exited
 		Master.fresh_start = false
 	can_unpause = true
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("spin") and paused and can_unpause:
